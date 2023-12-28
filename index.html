@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Changer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: red;
+            color: white;
+            font-size: 10em;
+            font-family: sans-serif;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // JavaScript code
+        document.addEventListener('DOMContentLoaded', function() {
+            // Array of words to cycle through
+            const words = [
+                      'put',
+                      'full',
+                      'pull',
+                      'cushion',
+                      'push',
+                      'sugar',
+                      'bull',
+                    ];
+            
+            // Get the element to display the word
+            const wordElement = document.body;
+
+            // Counter to keep track of the current word
+            let currentWordIndex = 0;
+
+            // Function to update the displayed word
+            function updateWord() {
+                wordElement.textContent = words[currentWordIndex];
+                // Increment the counter, reset to 0 if it exceeds the array length
+                currentWordIndex = (currentWordIndex + 1) % words.length;
+            }
+
+            // Attach the click event listener to the body
+            wordElement.addEventListener('click', updateWord);
+
+            // Initial display of the first word
+            updateWord();
+        });
+    </script>
+</body>
+</html>
